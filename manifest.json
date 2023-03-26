@@ -1,0 +1,28 @@
+
+{
+    "manifest_version": 3,
+    "name": "Voice-Enabled ChatGPT",
+    "version": "1.0",
+    "description": "A Chrome extension to enable voice interaction with ChatGPT.",
+    "permissions": ["declarativeContent", "activeTab", "storage"],
+    "content_scripts": [
+      {
+        "matches": ["https://*/*"],
+        "js": ["content.js"]
+      }
+    ],
+    "background": {
+        "service_worker": "background.js"
+      },
+
+    "action": {
+        "default_icon": "icon.png",
+        "default_popup": "popup.html"
+      },
+    "icons": {
+    "48": "icon.png"
+    },
+    "content_security_policy": {
+        "extension_pages": "script-src 'self'; object-src 'self'"
+      }
+  }
